@@ -12,8 +12,9 @@ let counter: number = 0;
 // Create basic HTML structure
 document.body.innerHTML = `
   <h1>CMPM 121 Project</h1>
+  <h2>The Button of Evil<h2>
   <p>Counter: <span id="counter">0</span></p>
-  <button id="increment">Click Me!</button>
+  <button id="increment">Dont Click :)</button>
 `;
 
 // Add click handler
@@ -21,6 +22,15 @@ const button = document.getElementById("increment")!;
 const counterElement = document.getElementById("counter")!;
 
 button.addEventListener("click", () => {
-  // This looks like to a good place to add some logic!
-  console.log("I have these thingies:", button, counterElement, counter);
+  counter = counter - 1;
+
+  counterElement.textContent = String(counter);
+
+  console.log(counter);
+  console.log(
+    "I have these thingies:",
+    button,
+    counterElement,
+    String(counter),
+  );
 });
